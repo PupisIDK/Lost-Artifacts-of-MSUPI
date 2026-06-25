@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Утерянные артефакты МГУПИ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="game">
+
+        <section class="start-screen" id="startScreen">
+            <div class="start-card">
+                <h1>Утерянные артефакты МГУПИ</h1>
+                <p>
+                    В архиве МГУПИ ведётся подготовка юбилейной экспозиции,
+                    посвящённой истории университета.
+                </p>
+                
+                <p>
+                    Во время переноса материалов часть ценных артефактов оказалась
+                    потеряна среди документов и оборудования старого кабинета архивиста.
+                </p>
+                
+                <p>
+                    Ваша задача — найти все исторические предметы, восстановить коллекцию
+                    и помочь сохранить память о развитии Московского государственного
+                    университета приборостроения и информатики.
+                </p>
+                
+                <p>
+                    Будьте внимательны: некоторые артефакты хорошо замаскированы
+                    среди окружающих предметов.
+                </p>
+                <button id="startBtn">Начать игру</button>
+                
+            </div>
+        </section>
+
+        <div id="introArtifacts" class="intro-artifacts hidden">
+            <h2>Найди эти артефакты</h2>
+        
+            <div class="intro-grid">
+                <img src="assets/photo.png">
+                <img src="assets/blueprint.png">
+                <img src="assets/ticket.png">
+                <img src="assets/diploma.png">
+                <img src="assets/computer.png">
+                <img src="assets/badge.png">
+            </div>
+        </div>
+
+        <section class="game-screen hidden" id="gameScreen">
+
+            <header class="top-panel">
+                <div>
+                    <h2>Утерянные артефакты МГУПИ</h2>
+                    <p>Кабинет хранителя истории</p>
+                </div>
+
+                <div class="stats">
+                    <span id="progressText">Найдено: 0/6</span>
+                    <span id="timerText">Время: 00:00</span>
+                </div>
+            </header>
+
+            <div class="game-layout">
+
+                <div class="scene-wrapper">
+                    <img src="assets/background.jpg" alt="Кабинет архивиста" class="background">
+
+                    <img src="assets/photo.png" class="artifact photo" data-id="photo" alt="Архивная фотография">
+                    <img src="assets/blueprint.png" class="artifact blueprint" data-id="blueprint" alt="Чертёж прибора">
+                    <img src="assets/ticket.png" class="artifact ticket" data-id="ticket" alt="Студенческий билет">
+                    <img src="assets/diploma.png" class="artifact diploma" data-id="diploma" alt="Диплом выпускника">
+                    <img src="assets/computer.png" class="artifact computer" data-id="computer" alt="Старый компьютер">
+                    <img src="assets/badge.png" class="artifact badge" data-id="badge" alt="Юбилейный значок">
+                </div>
+
+                <aside class="side-panel">
+                    <h3>Найти артефакты</h3>
+
+                    <ul class="artifact-list">
+                        <li data-item="photo">□ Архивная фотография</li>
+                        <li data-item="blueprint">□ Чертёж прибора</li>
+                        <li data-item="ticket">□ Студенческий билет</li>
+                        <li data-item="diploma">□ Диплом выпускника</li>
+                        <li data-item="computer">□ Старый компьютер</li>
+                        <li data-item="badge">□ Юбилейный значок</li>
+                    </ul>
+
+
+                    <button id="hintBtn">💡 Подсказка</button>
+                    <p id="hintCount">Подсказки: 3</p>
+
+                </aside>
+
+            </div>
+        </section>
+
+        <section class="modal hidden" id="artifactModal">
+            <div class="modal-card">
+        
+                <h2 id="modalTitle"></h2>
+        
+                <img id="modalImage" class="modal-image" src="" alt="Артефакт">
+        
+                <p id="modalText"></p>
+        
+                <button id="closeModalBtn">
+                    Продолжить
+                </button>
+        
+            </div>
+        </section>
+
+        <section class="modal hidden" id="winModal">
+            <div class="modal-card win">
+                <h2>Экспозиция восстановлена!</h2>
+                <p>
+                    Вы нашли все утерянные артефакты и помогли восстановить
+                    юбилейную коллекцию МГУПИ.
+                </p>
+                <p id="finalTime"></p>
+                
+                <p id="finalRank"></p>
+                
+                <div id="finalStory">
+                    Благодаря вашей внимательности все исторические материалы были найдены и возвращены в архив.
+                
+                    <br><br>
+                
+                    Экспозиция успешно восстановлена и теперь сможет рассказать новым поколениям студентов об истории, научных
+                    достижениях и традициях МГУПИ.
+                
+                    <br><br>
+                
+                    Сохранение университетского наследия помогает поддерживать связь между прошлым, настоящим и будущим инженерного
+                    образования.
+                </div>
+                
+                <button id="restartBtn">Играть снова</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
